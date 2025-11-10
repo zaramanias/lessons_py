@@ -1,0 +1,17 @@
+def_01
+    name = 'AttributeError' или'TypeError' при передаче 'None' в строковые методы.
+    defect = методы 'capitalize', 'trim', 'contains', 'delete_symbol' не содержат 
+            явной проверки на 'None', для аргументов 'string' и 'symbol'.
+    fact.result = При вызове 'string_util.capitalize(None)' происходит попытка 
+            вызова метода со значением  'None' что приводит к ошибке 'AttributeError' или 'TypeError'.
+    solve = Добавить проверку 'if argument is None:' в начале каждого метода и 
+            вызвать ошибку для обеспечения предсказуемого поведения.
+
+def_02
+    name = Тест падает при: 'contains('123', '')' вместо False, возвращает True.
+    defect = Тестовый кейс негативный, но функция 'contains' следует стандарту python,  при котром
+            пустая строка содержитсяв любой строке.
+    fact.result = Функция 'string_utils.contains('123', '')' возвращает True, что приводит к 
+           'AssertionError: assert True is False'
+    solve: Запретить поиск пустой строки добавив явную проверку 'if symbol == '': return False' 
+            в метод 'contains'.
